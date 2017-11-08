@@ -4,6 +4,7 @@
     <modules>
       <module fileurl="file://$PROJECT_DIR$/manage.iml" filepath="$PROJECT_DIR$/manage.iml" />
       <module fileurl="file://$PROJECT_DIR$/manager/manager.iml" filepath="$PROJECT_DIR$/manager/manager.iml" />
+      <module fileurl="file://F:\idea\spring-boot\manager\manager.iml" filepath="F:\idea\spring-boot\manager\manager.iml" />
     </modules>
   </component>
 </project>
