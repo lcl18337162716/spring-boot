@@ -15,7 +15,7 @@ import org.springframework.web.bind.annotation.RestController;
  */
 @RestController
 @RequestMapping(value = "login")
-public class LoginController {
+public class LoginController  {
 
     @Autowired
     private JwtTokenUtil jwtTokenUtil;
