@@ -6,4 +6,4 @@
  * @date 2017/10/31
  * @version V1.0
  */
-package com.lcl.manager.login.entity.vo;
+package com.lcl.manager.sys.entity.vo;
