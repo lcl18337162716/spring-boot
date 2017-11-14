@@ -50,7 +50,7 @@
                         and sur.role_id = sr.role_id
                         and sr.status = 1
                 )
-            ORDER BY
+            group by
                 srp.permission_id
         ) and sp.status = 1
        and sp.type = 1

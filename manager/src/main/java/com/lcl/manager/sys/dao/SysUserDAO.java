@@ -2,6 +2,9 @@ package com.lcl.manager.sys.dao;
 
 
 import com.lcl.manager.sys.entity.po.SysUser;
+import com.lcl.manager.sys.entity.vo.SearchUserVO;
+
+import java.util.List;
 
 public interface SysUserDAO {
     int deleteByPrimaryKey(String userId);
@@ -22,4 +25,11 @@ public interface SysUserDAO {
      * @return
      */
     SysUser selectSysUserByUserLoginId(String loginId);
+
+    /**
+     * 条件查询用户列表
+     * @param searchUserVO
+     * @return
+     */
+    List<SysUser> selectUserList(SearchUserVO searchUserVO);
 }

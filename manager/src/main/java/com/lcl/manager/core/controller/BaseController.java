@@ -2,6 +2,8 @@ package com.lcl.manager.core.controller;
 
 import com.lcl.manager.util.BaseResult;
 import com.lcl.manager.util.ConstantsCode;
+import lombok.Getter;
+import lombok.Setter;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.validation.BindingResult;
@@ -19,8 +21,12 @@ import java.util.Map;
  * @Description: 基础控制类
  * @date 2017/11/8
  */
+@Getter
+@Setter
 public class BaseController {
     private static final Logger LOGGER = LoggerFactory.getLogger(BaseController.class);
+    private Integer pageNo;
+    private Integer pageSize;
     /**
      * @return BaseResult 返回类型
      * @throws
@@ -43,5 +49,17 @@ public class BaseController {
                     errorMsg);
         }
         return new BaseResult(ConstantsCode.SYS_SUCCESS_CODE);
+    }
+
+    protected void load(String pageNo,String size) {
+        this.pageNo = 0;
+        this.pageSize = 0;
+        try {
+            this.pageNo = Integer.parseInt(pageNo);
+            this.pageSize = Integer.parseInt(size);
+        } catch (Exception ex) {
+            this.pageNo = 0;
+            this.pageSize = 10;
+        }
     }
 }

@@ -38,6 +38,23 @@
     <include refid="Base_Column_List" />
     from sys_user where login_id = #{loginId}
   </select>
+  <select id="selectUserList" resultMap="SysUserResultMap" parameterType="com.lcl.manager.sys.entity.vo.SearchUserVO">
+    select
+    <include refid="Base_Column_List" />
+    from sys_user b where 1=1
+    <if test="status != null and status != ''">
+      AND b.status = #{status,jdbcType=VARCHAR}
+    </if>
+    <if test="name != null and name != ''">
+      AND b.name LIKE CONCAT('%', #{name, jdbcType=VARCHAR}, '%')
+    </if>
+    <if test="nickName != null and nickName != ''">
+      AND b.nick_name LIKE CONCAT('%', #{nickName, jdbcType=VARCHAR}, '%')
+    </if>
+    <if test="cel != null and cel != ''">
+      AND b.cel LIKE CONCAT('%', #{cel, jdbcType=VARCHAR}, '%')
+    </if>
+  </select>
   <select id="selectByPrimaryKey" resultMap="SysUserResultMap" parameterType="java.lang.String" >
     select 
     <include refid="Base_Column_List" />
