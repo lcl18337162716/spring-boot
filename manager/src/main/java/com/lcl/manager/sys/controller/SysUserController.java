@@ -18,7 +18,7 @@ import org.springframework.web.bind.annotation.*;
  * @Description: 用户管理控制类
  * @date 2017/11/14
  */
-@Api(value = "用户管理", tags = {"用户管理"})
+@Api(value = "用户管理", description = "用户管理")
 @RestController
 @RequestMapping(value = "user")
 public class SysUserController extends BaseController{
@@ -34,5 +34,11 @@ public class SysUserController extends BaseController{
     public Object selectUserList(@RequestBody SearchUserVO searchUserVO){
         this.load(searchUserVO.getPageNo(),searchUserVO.getPageSize());
         return sysUserService.selectUserList(searchUserVO,this.getPageNo(),this.getPageSize());
+    }
+
+    @ApiOperation(value="根据id删除用户",notes="根据id删除用户")
+    @RequestMapping(value = "deleteUserById",method = {RequestMethod.GET})
+    public Object deleteUserById(@RequestParam(required = true) String userId){
+        return sysUserService.deleteUserById(userId);
     }
 }

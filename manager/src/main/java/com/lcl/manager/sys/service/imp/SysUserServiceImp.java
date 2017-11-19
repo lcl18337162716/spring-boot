@@ -39,4 +39,20 @@ public class SysUserServiceImp implements SysUserService{
         PageInfo pageInfo = new PageInfo(list);
         return new BaseResult(ConstantsCode.SYS_SUCCESS_CODE,ConstantsCode.SYS_SUCCESS_MSG,pageInfo);
     }
+
+    /**
+     * 根据id删除用户
+     *
+     * @param userId
+     * @return
+     */
+    @Override
+    public BaseResult deleteUserById(String userId) {
+        try {
+            sysUserDAO.deleteByPrimaryKey(userId);
+            return new BaseResult(ConstantsCode.SYS_SUCCESS_CODE,ConstantsCode.SYS_SUCCESS_MSG);
+        }catch (Exception e){
+            return new BaseResult(ConstantsCode.OPERATION_ERROR_CODE,ConstantsCode.OPERATION_DELETE_ERROR_MSG,e.getMessage());
+        }
+    }
 }

@@ -15,7 +15,7 @@ import springfox.documentation.swagger2.annotations.EnableSwagger2;
  * @version V1.0
  * @Title: Swagger2文档
  * @Package com.lcl.manager
- * @Description: Swagger2文档配置
+ * @Description: Swagger2文档配置  http://localhost:8080/manage/swagger-ui.html
  * @date 2017/11/9
  */
 @Configuration

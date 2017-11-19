@@ -19,4 +19,11 @@ public interface SysUserService {
      *@param pageSize @return
      */
     BaseResult selectUserList(SearchUserVO searchUserVO, Integer pageNo, Integer pageSize);
+
+    /**
+     * 根据id删除用户
+     * @param userId
+     * @return
+     */
+    BaseResult deleteUserById(String userId);
 }
