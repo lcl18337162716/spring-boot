@@ -61,33 +61,17 @@ public class SysUser implements Serializable {
      */
     private Integer countryId;
     /**
-     * 国家name
-     */
-    private String countryName;
-    /**
      * 省id
      */
     private Integer provinceId;
-    /**
-     * 省name
-     */
-    private String provinceName;
     /**
      * 城市id
      */
     private Integer cityId;
     /**
-     * 城市name
-     */
-    private String cityName;
-    /**
      * 区id
      */
     private Integer regionId;
-    /**
-     * 区name
-     */
-    private String regionName;
     /**
      * 地址
      */
@@ -128,14 +112,11 @@ public class SysUser implements Serializable {
                 ", cel='" + cel + '\'' +
                 ", avatarUrl='" + avatarUrl + '\'' +
                 ", countryId=" + countryId +
-                ", countryName='" + countryName + '\'' +
                 ", provinceId=" + provinceId +
-                ", provinceName='" + provinceName + '\'' +
                 ", cityId=" + cityId +
-                ", cityName='" + cityName + '\'' +
                 ", regionId=" + regionId +
-                ", regionName='" + regionName + '\'' +
                 ", address='" + address + '\'' +
+                ", status=" + status +
                 ", creater='" + creater + '\'' +
                 ", createTime=" + createTime +
                 ", updater='" + updater + '\'' +

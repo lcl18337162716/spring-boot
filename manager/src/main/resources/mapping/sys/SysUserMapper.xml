@@ -14,13 +14,9 @@
     <result column="cel" property="cel" jdbcType="VARCHAR" />
     <result column="avatar_url" property="avatarUrl" jdbcType="VARCHAR" />
     <result column="country_id" property="countryId" jdbcType="INTEGER" />
-    <result column="country_name" property="countryName" jdbcType="VARCHAR" />
     <result column="province_id" property="provinceId" jdbcType="INTEGER" />
-    <result column="province_name" property="provinceName" jdbcType="VARCHAR" />
     <result column="city_id" property="cityId" jdbcType="INTEGER" />
-    <result column="city_name" property="cityName" jdbcType="VARCHAR" />
     <result column="region_id" property="regionId" jdbcType="INTEGER" />
-    <result column="region_name" property="regionName" jdbcType="VARCHAR" />
     <result column="address" property="address" jdbcType="VARCHAR" />
     <result column="status" property="status" jdbcType="BIT" />
     <result column="creater" property="creater" jdbcType="VARCHAR" />
@@ -30,7 +26,7 @@
   </resultMap>
   <sql id="Base_Column_List" >
     user_id, login_id, pwd, name, age, sex, nick_name, qq, email, cel, avatar_url, country_id, 
-    country_name, province_id, province_name, city_id, city_name, region_id, region_name, 
+    province_id, city_id, region_id,
     address,status,creater, create_time, updater, update_time
   </sql>
   <select id="selectSysUserByUserLoginId" resultMap="SysUserResultMap" parameterType="java.lang.String">
@@ -69,17 +65,17 @@
     insert into sys_user (user_id, login_id, pwd, 
       name, age, sex, nick_name, 
       qq, email, cel, avatar_url, 
-      country_id, country_name, province_id, 
-      province_name, city_id, city_name, 
-      region_id, region_name, address,status,
+      country_id,  province_id,
+      city_id,
+      region_id,  address,status,
       creater, create_time, updater, 
       update_time)
     values (#{userId,jdbcType=VARCHAR}, #{loginId,jdbcType=VARCHAR}, #{pwd,jdbcType=VARCHAR}, 
       #{name,jdbcType=VARCHAR}, #{age,jdbcType=INTEGER}, #{sex,jdbcType=BIT}, #{nickName,jdbcType=VARCHAR}, 
       #{qq,jdbcType=VARCHAR}, #{email,jdbcType=VARCHAR}, #{cel,jdbcType=VARCHAR}, #{avatarUrl,jdbcType=VARCHAR}, 
-      #{countryId,jdbcType=INTEGER}, #{countryName,jdbcType=VARCHAR}, #{provinceId,jdbcType=INTEGER}, 
-      #{provinceName,jdbcType=VARCHAR}, #{cityId,jdbcType=INTEGER}, #{cityName,jdbcType=VARCHAR}, 
-      #{regionId,jdbcType=INTEGER}, #{regionName,jdbcType=VARCHAR}, #{address,jdbcType=VARCHAR},
+      #{countryId,jdbcType=INTEGER}, #{provinceId,jdbcType=INTEGER},
+       #{cityId,jdbcType=INTEGER},
+      #{regionId,jdbcType=INTEGER},  #{address,jdbcType=VARCHAR},
        #{status,jdbcType=BIT},
       #{creater,jdbcType=VARCHAR}, #{createTime,jdbcType=TIMESTAMP}, #{updater,jdbcType=VARCHAR}, 
       #{updateTime,jdbcType=TIMESTAMP})
@@ -123,26 +119,14 @@
       <if test="countryId != null" >
         country_id,
       </if>
-      <if test="countryName != null" >
-        country_name,
-      </if>
       <if test="provinceId != null" >
         province_id,
-      </if>
-      <if test="provinceName != null" >
-        province_name,
       </if>
       <if test="cityId != null" >
         city_id,
       </if>
-      <if test="cityName != null" >
-        city_name,
-      </if>
       <if test="regionId != null" >
         region_id,
-      </if>
-      <if test="regionName != null" >
-        region_name,
       </if>
       <if test="address != null" >
         address,
@@ -200,26 +184,14 @@
       <if test="countryId != null" >
         #{countryId,jdbcType=INTEGER},
       </if>
-      <if test="countryName != null" >
-        #{countryName,jdbcType=VARCHAR},
-      </if>
       <if test="provinceId != null" >
         #{provinceId,jdbcType=INTEGER},
-      </if>
-      <if test="provinceName != null" >
-        #{provinceName,jdbcType=VARCHAR},
       </if>
       <if test="cityId != null" >
         #{cityId,jdbcType=INTEGER},
       </if>
-      <if test="cityName != null" >
-        #{cityName,jdbcType=VARCHAR},
-      </if>
       <if test="regionId != null" >
         #{regionId,jdbcType=INTEGER},
-      </if>
-      <if test="regionName != null" >
-        #{regionName,jdbcType=VARCHAR},
       </if>
       <if test="address != null" >
         #{address,jdbcType=VARCHAR},
@@ -277,26 +249,14 @@
       <if test="countryId != null" >
         country_id = #{countryId,jdbcType=INTEGER},
       </if>
-      <if test="countryName != null" >
-        country_name = #{countryName,jdbcType=VARCHAR},
-      </if>
       <if test="provinceId != null" >
         province_id = #{provinceId,jdbcType=INTEGER},
-      </if>
-      <if test="provinceName != null" >
-        province_name = #{provinceName,jdbcType=VARCHAR},
       </if>
       <if test="cityId != null" >
         city_id = #{cityId,jdbcType=INTEGER},
       </if>
-      <if test="cityName != null" >
-        city_name = #{cityName,jdbcType=VARCHAR},
-      </if>
       <if test="regionId != null" >
         region_id = #{regionId,jdbcType=INTEGER},
-      </if>
-      <if test="regionName != null" >
-        region_name = #{regionName,jdbcType=VARCHAR},
       </if>
       <if test="address != null" >
         address = #{address,jdbcType=VARCHAR},
@@ -332,13 +292,9 @@
       cel = #{cel,jdbcType=VARCHAR},
       avatar_url = #{avatarUrl,jdbcType=VARCHAR},
       country_id = #{countryId,jdbcType=INTEGER},
-      country_name = #{countryName,jdbcType=VARCHAR},
       province_id = #{provinceId,jdbcType=INTEGER},
-      province_name = #{provinceName,jdbcType=VARCHAR},
       city_id = #{cityId,jdbcType=INTEGER},
-      city_name = #{cityName,jdbcType=VARCHAR},
       region_id = #{regionId,jdbcType=INTEGER},
-      region_name = #{regionName,jdbcType=VARCHAR},
       address = #{address,jdbcType=VARCHAR},
       status = #{status,jdbcType=BIT},
       creater = #{creater,jdbcType=VARCHAR},
